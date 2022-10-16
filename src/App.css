@@ -1,38 +1,419 @@
-.App {
-  text-align: center;
+/* Global Styles  */
+:root {
+    --light-color: rgb(9, 113, 9);
+    --default-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* css for Home Component  */
+.home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title-bar{
+    width: 80%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form-title {
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
-.App-link {
-  color: #61dafb;
+.form-desc {
+    color: var(--light-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tabs {
+    display: flex;
+    border-bottom: 1px solid rgb(46, 223, 46)
 }
+
+.tabs p {
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: 0.35s;
+    font-weight: 500;
+}
+
+.tabs p:hover {
+    background-color: rgb(45, 212, 45);
+}
+
+.active {
+    background-color: rgb(45, 212, 45);
+}
+
+.container {
+    width: 80%;
+    height: 70vh;
+}
+
+.feedback-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    padding-top: 10px;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+}
+.form-control{
+    height: 100%;
+    position: relative;
+}
+
+.inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputs div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+}
+
+.inputs div label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.inputs div label span {
+    color: red;
+}
+
+.inputs div input {
+    width: 80%;
+    outline: none;
+    border: none;
+    border-top: 1px solid rgb(45, 212, 45);
+    height: 32px;
+    text-indent: 5px;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+}
+
+.inputs div input:focus {
+    border-width: 2px;
+}
+
+.inputs div input::placeholder {
+    font-family: var(--default-family);
+    letter-spacing: 0.03em;
+}
+
+ .contact-field {
+    width: 40%;
+    /* background-color: red; */
+    height: 32px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+ }
+
+ .contact-field > p:nth-child(1) {
+    font-size: 14px;
+    font-weight: 500;
+ }
+
+ .contact-field > p >span {
+    color: red;
+ }
+
+ .PhoneInput{
+    display: flex;
+    column-gap: 18px;
+ }
+
+.PhoneInputInput{
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid rgb(45, 212, 45);
+    text-indent: 5px;
+    outline: none;
+    font-family: var(--default-family);
+    font-size: 15px;
+}
+
+.PhoneInputInput:focus {
+    border-width: 2px;
+}
+
+.PhoneInputInput::placeholder {
+    font-family: var(--default-family);
+    letter-spacing: 0.03em;
+}
+
+.objectives {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    margin-top: 50px;
+}
+.feedbacks{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    position: relative;
+}
+.feedbacks > p{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.feedbacks > p span{
+    color: red;
+}
+.ratings {
+    display: flex;
+    align-items: center;
+    column-gap: 6%;
+}
+
+.ratings div {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.ratings label {
+    font-size: 14px;
+}
+
+.ratings input {
+    width: 18px;
+    height: 16px;
+}
+
+.submit-button {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
+}
+
+.submit-button > button {
+    cursor: pointer;
+    background-color: rgb(59, 163, 59);
+    outline: none;
+    border: none;
+    padding: 9px 16px;
+    letter-spacing: 0.02em;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: var(--default-family);
+    color: #fff;
+    transition: 0.35s;
+}
+
+.submit-button > button:hover {
+    background-color: rgb(45, 212, 45);
+}
+
+.submit-button > button:active {
+    background-color: rgb(59, 163, 59);
+}
+
+.choice-error {
+    position: absolute;
+    background-color: rgb(210, 89, 89);
+    bottom: -40px;
+    width: 60%;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    position: absolute;
+}
+
+.choice-error::before {
+    content: "";
+    position: absolute;
+    right: 49%;
+    top: -25%;
+    width: 20px;
+    height: 100%;
+    background-color: rgb(210, 89, 89);
+    transform: rotateZ(45deg);
+}
+
+
+/* css for modal */
+.modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container {
+    width: 30%;
+    height: 40%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-desc {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.modal-desc > p {
+    font-size: 18.5px;
+    color: rgb(75, 56, 56);
+    font-weight: 600;
+}
+
+.modal-desc > span {
+    font-size: 14px;
+    color: var(--light-color);
+}
+
+.modal-content > i {
+    font-size: 80px;
+    color: rgb(59, 163, 59);
+}
+
+.modal-content > button {
+    outline: none;
+    border: none;
+    background-color: rgb(141, 89, 189);
+    padding: 9px 46px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+    font-family: var(--default-family);
+    letter-spacing: 0.03em;
+    transition: 0.35s;
+}
+
+.modal-content > button:hover  {
+    background-color: rgb(100, 39, 157);
+}
+
+.modal-content > button:active {
+    background-color: rgb(141, 89, 189);
+}
+
+.feedback-results {
+    width: 100%;
+    height: 100%;
+}
+
+.feedback-container {
+    width: 100%;
+    padding-top: 5px;
+}
+
+.top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar > p{
+    color: rgb(149, 133, 133);
+    font-size: 16px;
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+
+.tools > i {
+    color: rgb(149, 133, 133);
+    cursor: pointer;
+}
+
+.tools > button {
+    cursor: pointer;
+    background-color: rgb(59, 163, 59);
+    outline: none;
+    border: none;
+    padding: 6px 12px;
+    letter-spacing: 0.02em;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: var(--default-family);
+    color: #fff;
+    transition: 0.35s;
+}
+
+.tools > button:hover {
+    background-color: rgb(45, 212, 45);
+}
+
+.tools > button:active {
+    background-color: rgb(59, 163, 59);
+}
+
+.table-data {
+    width: 100%;
+    height: 400px;
+}
+
+.MuiDataGrid-columnHeaderTitle {
+    font-weight: 600 !important;
+}
+
+/* css for validation error box  */
+.invalid-box{
+    width: 80%;
+    border: 1px solid red;
+    color: red;
+    border-radius: 4px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.invalid-box > span {
+    margin-bottom: 3px;
+}
+
+.phone-error {
+    width: 100%;
+ }
